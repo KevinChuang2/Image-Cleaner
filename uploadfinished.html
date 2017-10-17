@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Finished!</title>
+	<body>
+
+	<div id="demo">
+	<button type="button" onclick="loadDoc()">Show Image</button>
+	</div>
+<script>
+function loadDoc() { //figure out what this shit does
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+	</body>
+</html>
